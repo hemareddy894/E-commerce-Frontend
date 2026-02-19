@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassy Shop - Modern E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Auth Page -->
+    <div id="authPage" class="page active">
+        <div class="auth-container">
+            <div class="auth-card glass">
+                <div class="auth-toggle">
+                    <button class="toggle-btn active" data-form="login">Login</button>
+                    <button class="toggle-btn" data-form="register">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <p class="subtitle">Login to continue shopping</p>
+                    
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <p class="subtitle">Join us today</p>
+                    
+                    <div class="form-group">
+                        <input type="text" id="registerName" placeholder="Full Name" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="registerPassword" placeholder="Password (min 8 chars)" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="registerConfirm" placeholder="Confirm Password" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Page -->
+    <div id="shopPage" class="page">
+        <!-- Navbar -->
+        <nav class="navbar glass">
+            <div class="nav-content">
+                <h1 class="logo">🛍️ Glassy Shop</h1>
+                <div class="nav-actions">
+                    <button class="icon-btn" id="themeToggle">🌙</button>
+                    <button class="icon-btn cart-btn" id="cartToggle">
+                        🛒
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                    <button class="btn-logout" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="shop-container">
+            <!-- Filters Sidebar -->
+            <aside class="filters glass">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Living</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Rating</label>
+                    <select id="ratingFilter">
+                        <option value="all">All Ratings</option>
+                        <option value="4">4★ & above</option>
+                        <option value="3">3★ & above</option>
+                    </select>
+                </div>
+                
+                <button class="btn-reset" id="resetFilters">Reset Filters</button>
+            </aside>
+
+            <!-- Products Grid -->
+            <main class="products-section">
+                <div class="products-header">
+                    <h2>Featured Products</h2>
+                    <p id="productCount">12 products</p>
+                </div>
+                <div id="productsGrid" class="products-grid"></div>
+            </main>
+        </div>
+
+        <!-- Cart Panel -->
+        <div id="cartPanel" class="cart-panel glass">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" id="closeCart">✕</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn-checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast glass"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
